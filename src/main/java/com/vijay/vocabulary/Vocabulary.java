@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author vkumar1 created on 5/23/21
@@ -15,7 +14,7 @@ public class Vocabulary {
     public static void main(String[] args) {
         Vocabulary vocabulary = new Vocabulary();
         InputStream inputStream = vocabulary.getFileFromResourceAsStream("words.txt");
-        List<Word> words = vocabulary.readFile(inputStream);
+        Set<Word> words = vocabulary.readFile(inputStream);
         words.forEach(word -> {
             System.out.println("---------------------------------------------------------");
             System.out.println("Word        : " + word.getWord());
@@ -26,8 +25,8 @@ public class Vocabulary {
     }
 
 
-    private List<Word> readFile(InputStream inputStream) {
-        List<Word> words = new LinkedList<>();
+    private Set<Word> readFile(InputStream inputStream) {
+        Set<Word> words = new TreeSet<>();
         try (InputStreamReader inputStreamReader =
                      new InputStreamReader(inputStream, "UTF-8");
              BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
@@ -42,13 +41,13 @@ public class Vocabulary {
                         words.add(word);
                     }
                     word = new Word();
-                    word.setWord(line);
+                    word.setWord(line.toLowerCase(Locale.ROOT));
                 } else if (lineNo == 1) {
                     word.setMeaning(line);
                     lineNo = 2;
                 } else if (lineNo == 2) {
                     word.setSentence(line);
-                    lineNo = 2;
+                    lineNo = 1;
                 }
 
             }

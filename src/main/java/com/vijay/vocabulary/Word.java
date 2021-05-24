@@ -3,7 +3,7 @@ package com.vijay.vocabulary;
 /**
  * @author vkumar1 created on 5/23/21
  */
-public class Word {
+public class Word implements Comparable<Word> {
     String word;
     String meaning;
     String sentence;
@@ -39,5 +39,11 @@ public class Word {
                 ", meaning='" + meaning + '\'' +
                 ", sentence='" + sentence + '\'' +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Word s) {
+        return this.word.compareTo(s.word);
     }
 }
