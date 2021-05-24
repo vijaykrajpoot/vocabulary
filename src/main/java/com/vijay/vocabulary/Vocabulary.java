@@ -16,7 +16,13 @@ public class Vocabulary {
         Vocabulary vocabulary = new Vocabulary();
         InputStream inputStream = vocabulary.getFileFromResourceAsStream("words.txt");
         List<Word> words = vocabulary.readFile(inputStream);
-        System.out.println(words);
+        words.forEach(word -> {
+            System.out.println("---------------------------------------------------------");
+            System.out.println("Word        : " + word.getWord());
+            System.out.println("Meaning     : " + word.getMeaning());
+            if (word.getSentence() != null)
+                System.out.println("Sentence    : " + word.getSentence());
+        });
     }
 
 
@@ -30,7 +36,6 @@ public class Vocabulary {
             boolean newWord = false;
             int lineNo = 0;
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
                 if (!line.contains(" ")) {
                     lineNo = 1;
                     if (word != null) {
