@@ -1,5 +1,7 @@
 package com.vijay.vocabulary;
 
+import java.util.List;
+
 public interface Vocabulary {
-    void build();
+    List<Word> build();
 }
