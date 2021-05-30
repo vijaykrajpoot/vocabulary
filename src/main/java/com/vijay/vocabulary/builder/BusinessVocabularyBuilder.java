@@ -6,6 +6,8 @@ import com.vijay.vocabulary.VocabularyBuilder;
 import com.vijay.vocabulary.Word;
 import com.vijay.vocabulary.builder.reader.VocabularyReader;
 
+import java.util.List;
+
 public class BusinessVocabularyBuilder extends VocabularyBuilder {
     private VocabularyReader vocabularyReader;
 
@@ -16,11 +18,8 @@ public class BusinessVocabularyBuilder extends VocabularyBuilder {
     @Override
     protected Vocabulary prepare() {
         BusinessVocabulary vocabulary = new BusinessVocabulary();
-        Word word = new Word()
-                .word("hi")
-                .meaning("say hi")
-                .sentence("Hi how are you");
-        vocabulary.addWord(word);
+        List<Word> words=vocabularyReader.read();
+        vocabulary.setWords(words);
         return vocabulary;
     }
 }

@@ -17,4 +17,8 @@ public class BusinessVocabulary implements Vocabulary {
     public List<Word> getWords() {
         return words;
     }
+
+    public void setWords(List<Word> words) {
+        this.words = words;
+    }
 }
