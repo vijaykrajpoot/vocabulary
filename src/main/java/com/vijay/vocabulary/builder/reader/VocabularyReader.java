@@ -1,4 +1,4 @@
-package com.vijay.vocabulary;
+package com.vijay.vocabulary.builder.reader;
 
 public interface VocabularyReader {
     void read();

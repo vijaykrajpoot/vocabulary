@@ -8,7 +8,7 @@ public class BusinessVocabulary implements Vocabulary {
     private List<Word> words = new LinkedList<>();
 
 
-    BusinessVocabulary addWord(Word word) {
+   public BusinessVocabulary addWord(Word word) {
         words.add(word);
         return this;
     }
