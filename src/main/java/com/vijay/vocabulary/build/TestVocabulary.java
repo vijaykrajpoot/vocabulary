@@ -11,6 +11,8 @@ public class TestVocabulary {
 
     public static void main(String[] args) {
         VocabularyBuilder vocabularyBuilder = new BusinessVocabularyBuilder();
-        List<Word> wordList = vocabularyBuilder.build();
+        Vocabulary vocabulary = vocabularyBuilder.build();
+        List<Word> words = vocabulary.getWords();
+        System.out.println("words:" + words);
     }
 }

@@ -32,6 +32,20 @@ public class Word {
         this.sentence = sentence;
     }
 
+    public Word word(String word){
+        this.word=word;
+        return this;
+    }
+
+    public Word sentence(String sentence){
+        this.sentence=sentence;
+        return this;
+    }
+    public Word meaning(String meaning){
+        this.meaning=meaning;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Word{" +

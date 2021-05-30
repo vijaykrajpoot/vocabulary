@@ -4,10 +4,10 @@ import java.util.List;
 
 public abstract class VocabularyBuilder {
 
-    public List<Word> build() {
+    public Vocabulary build() {
         return prepare();
     }
 
-    abstract protected List<Word> prepare();
+    abstract protected Vocabulary prepare();
 
 }
