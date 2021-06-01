@@ -9,7 +9,7 @@ import com.vijay.vocabulary.builder.reader.VocabularyReader;
 import java.util.List;
 
 public class BusinessVocabularyBuilder extends VocabularyBuilder {
-    private VocabularyReader vocabularyReader;
+    private final VocabularyReader vocabularyReader;
 
     public BusinessVocabularyBuilder(VocabularyReader vocabularyReader) {
         this.vocabularyReader = vocabularyReader;

@@ -1,9 +1,8 @@
 package com.vijay.vocabulary.build;
 
-import com.vijay.vocabulary.builder.BusinessVocabularyBuilder;
 import com.vijay.vocabulary.Vocabulary;
-import com.vijay.vocabulary.VocabularyBuilder;
 import com.vijay.vocabulary.Word;
+import com.vijay.vocabulary.builder.BusinessVocabularyBuilder;
 import com.vijay.vocabulary.builder.reader.VocabularyFileReader;
 import com.vijay.vocabulary.builder.reader.VocabularyReader;
 
@@ -15,8 +14,7 @@ public class TestVocabulary {
     public static void main(String[] args) {
         InputStream inputStream = getFileFromResourceAsStream("words.txt");
         VocabularyReader vocabularyReader = new VocabularyFileReader(inputStream);
-        VocabularyBuilder vocabularyBuilder = new BusinessVocabularyBuilder(vocabularyReader);
-        Vocabulary vocabulary = vocabularyBuilder.build();
+        Vocabulary vocabulary = new BusinessVocabularyBuilder(vocabularyReader).build();
         List<Word> words = vocabulary.getWords();
         words.forEach(word -> {
             System.out.println("---------------------------------------------------------");
